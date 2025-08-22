@@ -2,6 +2,207 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* For all borders in your app */
+* {
+  /* Smooth border rendering */
+  border-image-slice: 1;
+  border-image-source: none;
+}
+
+html {
+  scroll-behavior: auto; /* Let Lenis handle scrolling */
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+   pointer-events: none;
+} 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --sidepadding-md: 6.8vw;
+  --montserrat: "Montserrat", sans-serif;
+  --inter: "Inter", sans-serif;
 }
+
+h1,h2,h3,h4,h5 {
+  font-family: var(--montserrat);
+}
+
+h1 {
+  font-size: 6.333vw;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 4.861vw;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: 2.431vw;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.5px;
+}
+
+h4 {
+  font-size: 1.667vw;
+  font-weight: 600;
+  line-height: 1.25;
+
+}
+
+h5,.button,.h5 {
+  font-size: 1.111vw;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+body,p {
+  font-family: var(--inter);
+  font-size: 1em;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+body {
+  min-height: 200vh;
+  background-color: #fafaf4;
+}
+
+.header-section {
+  padding-inline: 1em;
+  z-index: 100;
+}
+
+.header-logo {
+  width: 5.556vw;
+}
+
+.button {
+  position: relative;
+  overflow: clip;
+  width: fit-content;
+  padding-inline: 1.389vw;
+  padding-block: 0.694vw;
+  border-radius: 1.042vw;
+  border: 1px solid black;
+  background: white;
+  transition: color .35s ease;
+  isolation: isolate; 
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;                        
+  background: black;
+  z-index: -1;                     
+  clip-path: circle(0% at 0% 0%);
+  transition: clip-path .5s ease;  
+}
+
+.button:hover {
+  color: white;                             
+}
+
+.button:hover::before {
+  clip-path: circle(150% at 0% 0%);
+}
+
+a.navlink {
+  position: relative;
+  display: inline-block; 
+}
+
+a.navlink::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: black;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;             /* grows left → right */
+  transition: transform 0.3s ease-in;
+}
+
+a.navlink:hover::after {
+  transform: scaleX(1);
+}
+
+.parallax-container {
+  position: relative;
+}
+
+.parallax-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transform: translateZ(0)
+}
+
+.parallax-bg::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg,rgba(0, 0, 0, 0.808) 0%, rgba(129, 118, 66, 0.103) 100%);
+}
+
+.home-banner-content {
+  top: 13.215vw;
+  left: var(--sidepadding-md);
+}
+
+
+
+
+
