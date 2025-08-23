@@ -12,13 +12,15 @@ export default {
   <header
     v-motion
     :initial="{ y: -200 }"
-    :enter="{  y: 0 ,
-    transition: {
-      type: 'keyframes',
-      duration: 500,
-      delay: 500,          
-      ease: 'easeOut'       
-    }}"
+    :enter="{
+      y: 0,
+      transition: {
+        type: 'keyframes',
+        duration: 500,
+        delay: 500,
+        ease: 'easeOut',
+      },
+    }"
     class="header-section bg-white fixed top-0 left-0 right-0"
   >
     <div class="flex items-center justify-between">

@@ -1,10 +1,10 @@
 <script setup>
-defineProps({ 
+defineProps({
   buttonText: String,
   href: {
     type: String,
-    default: '#'
-  }
+    default: '#',
+  },
 })
 </script>
 
