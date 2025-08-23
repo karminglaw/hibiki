@@ -43,18 +43,18 @@ export const initParallaxAnimations = () => {
     if (!img) return
 
     gsap.set(img, {
-      yPercent: -20, // start position
+      yPercent: -25, // start position
       opacity: 1,
       force3D: true,
       willChange: 'transform',
     })
 
     gsap.to(img, {
-      yPercent: 20, // animate down
+      yPercent: 25, // animate down
       ease: 'none',
       scrollTrigger: {
         trigger: wrap,
-        scrub: true,
+        scrub: 1.5,
         start: 'top bottom',
         end: 'bottom top',
       },
