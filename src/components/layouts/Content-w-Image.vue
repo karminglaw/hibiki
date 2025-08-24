@@ -23,8 +23,8 @@ defineProps({
 
       <div class="flex flex-col gap-[15px] justify-center">
         <h5 class="subheader">{{ subheaderText }}</h5>
-        <h3>{{ mainTitle }}</h3>
-        <p class="text-gray-800">{{ contentText }}</p>
+        <h3 animate>{{ mainTitle }}</h3>
+        <p animate-2 class="text-gray-800">{{ contentText }}</p>
         <CustomButton :buttonText="'About'" :href="'/about'" />
       </div>
     </div>

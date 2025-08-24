@@ -6,7 +6,7 @@ import { MotionPlugin } from '@vueuse/motion'
 import Lenis from '@studio-freight/lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { initRevealAnimations, initParallaxAnimations } from '../plugin/animations/animation'
+import { initRevealAnimations, initParallaxAnimations, initBodyTextAnimation , initZoomAnimations , initHeadingTextAnimation, } from '../plugin/animations/animation'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -42,6 +42,9 @@ app.use(router)
 app.mount('#app')
 
 setTimeout(() => {
+  initHeadingTextAnimation ()
   initRevealAnimations()
   initParallaxAnimations()
-}, 200)
+  initBodyTextAnimation()
+  initZoomAnimations()
+}, 100)

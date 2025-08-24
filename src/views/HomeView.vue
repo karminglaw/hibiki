@@ -1,6 +1,7 @@
 <script setup>
 import ContentWImage from '@/components/layouts/Content-w-Image.vue'
 import HomeBanner from '@/components/layouts/HomeBanner.vue'
+import ZoomImage from '@/components/layouts/ZoomImage.vue';
 </script>
 
 <template>
